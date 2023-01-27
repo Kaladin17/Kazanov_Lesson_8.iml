@@ -9,7 +9,7 @@ public class RPG_Game {
     public static Random random = new Random();
 
     public static void startGame() {
-        Boss boss = new Boss(2200, 50, "Thanos");
+        Boss boss = new Boss(2000, 50, "Thanos");
         Warrior warrior = new Warrior(280, 10, "Iron man");
         Medic doc = new Medic(250, 5, 10, "doctor Strange");
         Berserk berserk = new Berserk(260, 15, "Hulk");
@@ -65,6 +65,7 @@ public class RPG_Game {
             if (boss.getDefence() != heroes[i].getAbility()) {
                     heroes[i].hits(boss);
                     heroes[i].applySuperPower(boss, heroes);
+                    heroes[i].minPoints(boss, heroes);
                 }
             }
          printStatistics(boss, heroes);

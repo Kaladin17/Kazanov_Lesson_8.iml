@@ -22,4 +22,14 @@ public class Medic extends Hero {
     public String toString() {
         return super.toString() + " heal points: " + this.healPoints;
     }
+
+    public void setHealPoints(int healPoints) {
+        this.healPoints = healPoints;
+    }
+
+    @Override
+    public void minPoints(Boss boss, Hero[] heroes) {
+        super.minPoints(boss, heroes);
+        this.setHealPoints(0);
+    }
 }

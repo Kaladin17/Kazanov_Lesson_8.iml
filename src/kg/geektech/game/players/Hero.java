@@ -25,6 +25,10 @@ public abstract class Hero extends GameEntity implements HavingSuperAbility {
         if (this.getHealth() > 0 && this.getHealth() > 300) { //сделать возврат к начальнму значению
             this.setHealth(300);
         }
+    }public void minPoints(Boss boss, Hero[] heroes) {
+        if (this.getHealth() == 0) { //сделать возврат к начальнму значению
+            this.setDamage(0);
+        }
     }
 
 }
