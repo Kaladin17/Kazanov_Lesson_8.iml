@@ -9,7 +9,7 @@ public class RPG_Game {
     public static Random random = new Random();
 
     public static void startGame() {
-        Boss boss = new Boss(2000, 50, "Thanos");
+        Boss boss = new Boss(2200, 50, "Thanos");
         Warrior warrior = new Warrior(280, 10, "Iron man");
         Medic doc = new Medic(250, 5, 10, "doctor Strange");
         Berserk berserk = new Berserk(260, 15, "Hulk");
@@ -18,7 +18,7 @@ public class RPG_Game {
         Magic magic = new Magic(270, 20, "Scarlet witch");
         Stun stun = new Stun(250, 15, "Thor");
         BloodRain bloodRain = new BloodRain(230, 10, 0, "Black Panther");
-        Hero[] heroes = {warrior, doc, leader, berserk, assistant, bloodRain, stun, magic};
+        Hero[] heroes = {warrior, doc, leader, bloodRain, berserk, assistant, stun, magic};
 
         printStatistics(boss, heroes);
         while (!isGameFinished(boss, heroes)) {
@@ -57,6 +57,7 @@ public class RPG_Game {
         boss.chooseDefence(heroes);
         boss.hits(heroes);
         heroes[2].passiveApplySuperPower(heroes);
+        heroes[3].damageOverTime(boss);
         // пассивная способность leader, ее босс не блокирует
         //Hero.maxHealth(heroes); не работает ссылка на метод
 

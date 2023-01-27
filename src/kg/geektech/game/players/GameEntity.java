@@ -39,5 +39,7 @@ public abstract class GameEntity {
 
     public void passiveApplySuperPower(Hero[] heroes) {
     }
+    public void damageOverTime(Boss boss){
+    }
 
 }

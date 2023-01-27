@@ -27,6 +27,11 @@ public class BloodRain extends Hero {
             }
         }
     }
+    public void damageOverTime(Boss boss) {
+        if (boss.getHealth() > 0) {
+            boss.setHealth(boss.getHealth() - this.getBleeding());
+        }
+    }
     public String toString() {
         return super.toString() + " bleeding points: " + this.bleeding;
     }
